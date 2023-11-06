@@ -1,1 +1,1 @@
-Calcula a média das notas dadas pelo usuário, a quantidade de notas pode ser configurada.
+Calcula a média das 3 notas dadas pelo usuário.
