@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "bugiganga.cpp"
-#define IMAGEM "muca_circ.bmp" //faz a define  IMAGEM como o arquivo .bmp esolhido
-#define NOVA_IMAGEM "muca_novo.bmp" //faz a define da nova imagem
+#define IMAGEM "(nome imagem).bmp" //faz a define  IMAGEM como o arquivo .bmp esolhido
+#define NOVA_IMAGEM "(nome para imagem a ser criada).bmp" //faz a define da nova imagem
  
 int matriz_inicio[30][13]={
         {0,0,0,0,0,0,0,0,0,0,0,0,0},
