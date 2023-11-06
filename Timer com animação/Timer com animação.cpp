@@ -1,77 +1,3 @@
-Google Sala de Aula
-Google Sala de Aula
-4312 - Elementos de Programação (2022)
-Início
-Agenda
-Inscrito
-Pendentes
-4
-4212/2021 - Digital
-4
-4411 - Eletrônica de Potência (2023)
-4
-4411 - Processamento de Sinais (2023)
-4
-4411 - Sistemas de Comunicação (2023)
-4
-4411 - TCC (2023)
-4
-4411 - Espanhol (2023)
-4
-4411 - Automação (2023)
-4
-4411 - Gestão e Empreendedorismo (2023)
-4
-4411/23- Acionamentos (2023)
-2
-2ª 4411 - Trô (manhã)
-Língua Portuguesa
-4
-4411 - Sociologia (2023)
-2023
-4
-4411 - Sistemas Microprocessados II (2023)
-2
-2 ano - Reforço Programação
-4
-4212 - Introdução à Programação (2021)
-A
-Aulas de reforço InTRO
-4
-4112
-Educação Física
-Turmas arquivadas
-Configurações
-A turma foi arquivada pelo professor. Não é possível adicionar ou editar informações.
-parte 2 Cronômetro.
-parte 2 Cronômetro.
-Lucas Luis Gutkoski
-•
-20 de mai. de 2022
-100 pontos
-Data de entrega: 3 de jun. de 2022, 09:10
-Usando o mesmo programa desenvolvido na parte 1 - acrescente agora a parte de arquivos. Use o salvamento e recuperação de dados em arquivos para:
-1. Se fechar o programa, o valor do cronômetro deve ser salvo para: aso ser aberto novamente retornar com o mesmo valor da ultima configuração.
- Para isso o arquivo deve ter: um valor salvo de recuperação para fechamento inesperado e outro de abertura normal do programa.
-2. Deve ter dados de configuração de visualização do cronômetro, devendo ser possível salvar as cores de visulização. O  arquivo deve configuração deve parecer com o exemplo abaixo:
-
-tempo=789
-tempoinicial=100
-cordigito=AZUL
-corfundo=BRANCO
-corpainel=AMARELO
-
-
-*outras configurações podem ser criadas opcionalmente, com tamanh dos displays por exemplo.
-
-Ao abrir o programa ele deve abri sempre pausado, mas com as configurações constantes no arquivo
-Comentários da turma
-Seus trabalhos
-Entregue com atraso
-
-Timer mto loco.cpp
-Texto
-Comentários particulares
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -910,7 +836,4 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
 
     animacao();
     return 0;
-
  }
-Timer mto loco.cpp
-Exibindo Timer mto loco.cpp…
