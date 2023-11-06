@@ -1,8 +1,82 @@
+Google Sala de Aula
+Google Sala de Aula
+4312 - Elementos de Programação (2022)
+Início
+Agenda
+Inscrito
+Pendentes
+4
+4212/2021 - Digital
+4
+4411 - Eletrônica de Potência (2023)
+4
+4411 - Processamento de Sinais (2023)
+4
+4411 - Sistemas de Comunicação (2023)
+4
+4411 - TCC (2023)
+4
+4411 - Espanhol (2023)
+4
+4411 - Automação (2023)
+4
+4411 - Gestão e Empreendedorismo (2023)
+4
+4411/23- Acionamentos (2023)
+2
+2ª 4411 - Trô (manhã)
+Língua Portuguesa
+4
+4411 - Sociologia (2023)
+2023
+4
+4411 - Sistemas Microprocessados II (2023)
+2
+2 ano - Reforço Programação
+4
+4212 - Introdução à Programação (2021)
+A
+Aulas de reforço InTRO
+4
+4112
+Educação Física
+Turmas arquivadas
+Configurações
+A turma foi arquivada pelo professor. Não é possível adicionar ou editar informações.
+parte 2 Cronômetro.
+parte 2 Cronômetro.
+Lucas Luis Gutkoski
+•
+20 de mai. de 2022
+100 pontos
+Data de entrega: 3 de jun. de 2022, 09:10
+Usando o mesmo programa desenvolvido na parte 1 - acrescente agora a parte de arquivos. Use o salvamento e recuperação de dados em arquivos para:
+1. Se fechar o programa, o valor do cronômetro deve ser salvo para: aso ser aberto novamente retornar com o mesmo valor da ultima configuração.
+ Para isso o arquivo deve ter: um valor salvo de recuperação para fechamento inesperado e outro de abertura normal do programa.
+2. Deve ter dados de configuração de visualização do cronômetro, devendo ser possível salvar as cores de visulização. O  arquivo deve configuração deve parecer com o exemplo abaixo:
+
+tempo=789
+tempoinicial=100
+cordigito=AZUL
+corfundo=BRANCO
+corpainel=AMARELO
+
+
+*outras configurações podem ser criadas opcionalmente, com tamanh dos displays por exemplo.
+
+Ao abrir o programa ele deve abri sempre pausado, mas com as configurações constantes no arquivo
+Comentários da turma
+Seus trabalhos
+Entregue com atraso
+
+Timer mto loco.cpp
+Texto
+Comentários particulares
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 #include "bugiganga.cpp"
-#define primeira_vez 2 //defina 1 se for a primeira vez ou 2 se o programa já foi compilado neste computador
+
 
 int mtrx[10][10]={0};
 int matriz_inicio[30][13]={
@@ -236,6 +310,7 @@ for(int x=0;x<30;x++){
     };
 void animacao(void){
     //função animação
+    system ( "color 0F ");
    int aux=0;
    while(1){
         for(int x=0;x<20;x++){
@@ -334,11 +409,11 @@ void animacao(void){
    }
 }
 
-void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)       
+void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
 {
     //função pra escrever os dados no arquivo
     FILE *fp;
-    fp = fopen("teste_eba", "w");           
+    fp = fopen("teste_eba", "w");
         if(!fp){
             printf("Erro");
             exit(0);
@@ -351,115 +426,105 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
     fclose(fp);
 }
 
- int mostra_cent(int numero, int numero2)
+ int mostra_cent(int painel, int digito)
 {
     //funcao para mostrar as centenas
-    int p_escrita=0;
     for(int i=0;i<10;i++)
         for(int j=0;j<10;j++)
          {
            gotoxy(j+22,i);
-           if(numero==1){
+           if(painel==1){
                if(mtrx[j][i]==0){textcolor(PRETO);}
-               p_escrita=1;
+
            }
-           else if(numero==2){
+           else if(painel==2){
                if(mtrx[j][i]==0){textcolor(AZUL);}
-               p_escrita=2;
            }
-           else if(numero==3){
+           else if(painel==3){
                if(mtrx[j][i]==0){textcolor(LIGHT_GRAY);}
-               p_escrita=3;
            }
-           else if(numero==4){
+           else if(painel==4){
                if(mtrx[j][i]==0){textcolor(CIANO);}
-               p_escrita=4;
            }
-           if(numero2==1){
+           if(digito==1){
                if(mtrx[j][i]==1){textcolor(VERDE);}
            }
-           else if(numero2==2){
+           else if(digito==2){
                if(mtrx[j][i]==1){textcolor(WHITE);}
            }
-           else if(numero2==3){
+           else if(digito==3){
                if(mtrx[j][i]==1){textcolor(MARRON);}
            }
-           else if(numero2==4){
+           else if(digito==4){
                if(mtrx[j][i]==1){textcolor(VERMELHO);}
            }
            printf("%c",219);
-         }
-    return(p_escrita);
-}
- int mostra_dez(int numero, int numero2)
-{
+            }
+    }
+ int mostra_dez(int painel, int digito){
    //funcao para mostrar as dezenas
-    int p_escrita;
     for(int i=0;i<10;i++)
         for(int j=0;j<10;j++)
         {
           gotoxy(j+33,i);
-          if(numero==1){
+          if(painel==1){
                if(mtrx[j][i]==0){textcolor(PRETO);}
            }
-           else if(numero==2){
+           else if(painel==2){
                if(mtrx[j][i]==0){textcolor(AZUL);}
            }
-           else if(numero==3){
+           else if(painel==3){
                if(mtrx[j][i]==0){textcolor(LIGHT_GRAY);}
            }
-           else if(numero==4){
+           else if(painel==4){
                if(mtrx[j][i]==0){textcolor(CIANO);}
            }
-           if(numero2==1){
+           if(digito==1){
                if(mtrx[j][i]==1){textcolor(VERDE);}
-               p_escrita=1;
            }
-           else if(numero2==2){
+           else if(digito==2){
                if(mtrx[j][i]==1){textcolor(WHITE);}
-               p_escrita=2;
            }
-           else if(numero2==3){
+           else if(digito==3){
                if(mtrx[j][i]==1){textcolor(MARRON);}
-               p_escrita=3;
            }
-           else if(numero2==4){
+           else if(digito==4){
                if(mtrx[j][i]==1){textcolor(VERMELHO);}
-               p_escrita=4;
            }
           printf("%c",219);
         }
-    return(p_escrita);
-}
- int mostra_uni(int numero, int numero2)
+ }
+
+
+ int mostra_uni(int painel, int digito)
 {
    //funcao para mostrar as unidades
     for(int i=0;i<10;i++)
         for(int j=0;j<10;j++)
         {
           gotoxy(j+44,i);
-          if(numero==1){
+          if(painel==1){
                if(mtrx[j][i]==0){textcolor(PRETO);}
            }
-           else if(numero==2){
+           else if(painel==2){
                if(mtrx[j][i]==0){textcolor(AZUL);}
            }
-           else if(numero==3){
+           else if(painel==3){
                if(mtrx[j][i]==0){textcolor(LIGHT_GRAY);}
            }
-           else if(numero==4){
+           else if(painel==4){
                if(mtrx[j][i]==0){textcolor(CIANO);}
            }
-           if(numero2==1){
+           if(digito==1){
                if(mtrx[j][i]==1){textcolor(VERDE);}
            }
-           else if(numero2==2){
+           else if(digito==2){
                if(mtrx[j][i]==1){textcolor(WHITE);}
            }
-           else if(numero2==3){
+           else if(digito==3){
                if(mtrx[j][i]==1){textcolor(MARRON);}
            }
-           else if(numero2==4){
+           else if(digito==4){
                if(mtrx[j][i]==1){textcolor(VERMELHO);}
            }
           printf("%c",219);
@@ -473,7 +538,7 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
      gotoxy(30,19);
      printf(" Escolha a nova cor-->");
      gotoxy(30,20);
-     printf("\n\n1- Azul\n2- Vermelho\n3- Verde\n4- Amarelo\n5- Roxo");
+     printf("\n\n1- Azul\n2- Vermelho\n3- Verde\n4- Preto\n5- Roxo");
      gotoxy(54,19);
      scanf("%i", &cor);
      switch(cor)
@@ -494,7 +559,7 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
         break;
 
         case 4:
-        system("color 6F");
+        system("color 0F");
         p_escrita=4;
         break;
 
@@ -504,7 +569,7 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
         break;
      }
      gotoxy(25,12);
-        printf("                                 ");    
+        printf("                                 ");
      gotoxy(30,19);
         printf("                                 ");
      gotoxy(0,22);
@@ -518,9 +583,6 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
      gotoxy(0,26);
          printf("                               ");
     return(p_escrita);
- }
-
- int muda_cor_digitos(){
  }
 
  void zera_mtrx(void)
@@ -700,7 +762,7 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
       }
 
 }
- int main(){ 
+ int main(){
      Abertura();
      printf("\nTURMA 4312 - dia:0x/05");
      Sleep(5000);                                   //Abertura
@@ -708,22 +770,23 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
       int aux, total, cor_fundo, cor_digito, cor_painel;
       int p=0,c=0, display, n_inicio, y;
 
-        if(primeira_vez==1){
-            FILE *fp;
-            fp = fopen ("teste_eba","r");   //cria o arquivo caso ainda não exista
-            escreve_arquivo(0,2,3,5);
-        }
-        
         FILE *fp;
         fp = fopen ("teste_eba","r");
+        if(!fp){
+            fp = fopen ("teste_eba", "w");
+            escreve_arquivo(100, 5, 2, 1);
+            fclose(fp);
+        }
+         fp = fopen ("teste_eba","r");
          fscanf(fp, "%i" "%i" "%i" "%i" "%i", &total, &n_inicio, &cor_fundo, &cor_digito, &cor_painel); //le o arquivo
-              
+         fclose(fp);
+
         if(cor_fundo==1){system("color 1F");}       //azul
         else if(cor_fundo==2){system("color 4F");}  //vermelho
         else if(cor_fundo==3){system("color 2F");}  //verde
-        else if(cor_fundo==4){system("color 6F");}  //amarelo
+        else if(cor_fundo==4){system("color 0F");}  //preto
         else if(cor_fundo==5){system("color 5F");}  //roxo
-        
+
         if(total==0){
             total=100;
         }
@@ -732,13 +795,13 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
         desenho_numero(uni);
            mostra_uni(cor_painel, cor_digito);
                 zera_mtrx();
-                
-        desenho_numero(dez);                       
-         cor_digito = mostra_dez(cor_painel, cor_digito);
+
+        desenho_numero(dez);
+            mostra_dez(cor_painel, cor_digito);
                 zera_mtrx();
-                
+
          desenho_numero(cent);
-         cor_painel = mostra_cent(cor_painel, cor_digito);
+            mostra_cent(cor_painel, cor_digito);
                 zera_mtrx();
 
          gotoxy(20,11);
@@ -750,11 +813,11 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
         gotoxy(20,11);
             printf(" Pressione # para pausar/mudar o valor  ");
         gotoxy(20,14);                                                     //opções de entrada
-            printf(" Pressione & para mudar a cor do fundo  ");
+            printf(" Digite & para mudar a cor do fundo  ");
         gotoxy(20,15);
-            printf( "Pressione ! para mudar a cor do painel ");
+            printf( "Digite ! para mudar a cor do painel ");
         gotoxy(20,16);
-            printf( "Pressione - para mudar a cor dos digitos");
+            printf( "Digite - para mudar a cor dos digitos");
         }
 
 
@@ -793,7 +856,7 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
             }
             else if(c==45){
                 gotoxy(30,20);
-                printf("\n\n1- Verde\n2- Branco\n3- Marrom\n4- Vermelho");
+                printf("\n\n1- Verde\n2- Branco\n3- Amarelo\n4- Vermelho");
                 scanf("%i", &cor_digito);
                 gotoxy(25,12);
                      printf("                                 ");
@@ -815,11 +878,11 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
                 zera_mtrx();
 
         desenho_numero(dez);                       //Mostra os números
-         cor_digito = mostra_dez(cor_painel, cor_digito);
+           mostra_dez(cor_painel, cor_digito);
                 zera_mtrx();
 
         desenho_numero(cent);
-          cor_painel = mostra_cent(cor_painel, cor_digito);
+           mostra_cent(cor_painel, cor_digito);
                 zera_mtrx();
 
         uni--;
@@ -835,17 +898,19 @@ void escreve_arquivo(int display, int cor_fundo, int cor_digito, int cor_painel)
         }
         gotoxy(33,12);
         Sleep(1000);
-        
+
         display = (cent*100)+(dez*10)+uni;
-        
+
         escreve_arquivo(display, cor_fundo, cor_digito, cor_painel);
 
         if(uni==0 && dez==0 && cent==0)
         break;
     }
     system("cls");
-    
+
     animacao();
     return 0;
-        
+
  }
+Timer mto loco.cpp
+Exibindo Timer mto loco.cpp…
